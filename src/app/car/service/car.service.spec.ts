@@ -57,6 +57,19 @@ describe('CarService', () => {
     expect(result?.id).toBe(carsObject[0].id);
   });
 
+  it('should update a car', () => {
+    const date = new Date();
+    const car = new Car(1,'name','description',500.52,true,'FRC-3548','red', date);
+    
+    service.insertCar(car);
+    var carsObject = JSON.parse(window.localStorage['cars']);
+    const carUpdate = new Car(carsObject[0].id,'updated','description',0,false,'FRC-XXXX','blue', date);
+    var result = service.update(carUpdate);
+
+    var objectUpdated = JSON.parse(window.localStorage['cars'])
+    expect(objectUpdated[0].name).toBe('updated');
+  });
+
   it('should delete a car', () => {
     const date = new Date();
     const car = new Car(1,'name','description',500.52,true,'FRC-3548','red', date);
