@@ -18,7 +18,7 @@ describe('Car', () => {
     expect(car.name).toEqual('name');
     expect(car.description).toEqual('description');
     expect(car.dailyRate).toEqual(500.52);
-    expect(car.avaliable).toEqual(true);
+    expect(car.available).toEqual(true);
     expect(car.licensePlate).toEqual('FRC-3548');
     expect(car.color).toEqual('red');
     expect(car.createdAt).toEqual(date);

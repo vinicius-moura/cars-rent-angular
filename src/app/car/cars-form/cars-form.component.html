@@ -23,7 +23,7 @@
                 </select>
             </div>
             <div class="form-group input-holder col">
-                <label class="input-label" for="avaliable">Cor:</label>
+                <label class="input-label" for="available">Cor:</label>
                 <input type="text" class="form-control" id="color" name="color"
                 [(ngModel)]="car.color"
                 #color="ngModel" required>
@@ -55,19 +55,19 @@
                 </div>
             </div>
             <div class="form-group input-holder col-3">
-                <label class="input-label" for="avaliable">Disponível:</label>
+                <label class="input-label" for="available">Disponível:</label>
                 <div class="radio-holder">
                     <div class="radio-option">
-                        <input type="radio" class="radio-input form-check-input" id="avaliable" name="avaliable"
-                        [(ngModel)]="car.avaliable" [value]="true" required #avaliable="ngModel">
+                        <input type="radio" class="radio-input form-check-input" id="available" name="available"
+                        [(ngModel)]="car.available" [value]="true" required #available="ngModel">
                         <span>Sim</span>
                     </div>
                     <div class="radio-option">
-                        <input type="radio" class="radio-input form-check-input" id="avaliable" name="avaliable"
-                        [(ngModel)]="car.avaliable" [value]="false" required><span>Não</span>
+                        <input type="radio" class="radio-input form-check-input" id="available" name="available"
+                        [(ngModel)]="car.available" [value]="false" required><span>Não</span>
                     </div>
                 </div>
-                <div class="error-message alert-danger" *ngIf="avaliable.errors?.['required'] && (avaliable.dirty || avaliable.touched)">
+                <div class="error-message alert-danger" *ngIf="available.errors?.['required'] && (available.dirty || available.touched)">
                     Selecione uma opção.
                 </div>
             </div>

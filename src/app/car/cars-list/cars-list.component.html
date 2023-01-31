@@ -25,8 +25,8 @@
             <td>{{ car.description }}</td>
             <td class="text-center">R$ {{ car.dailyRate }}</td>
             <td class="text-center">
-                <i *ngIf="car.avaliable" class="icon-avaliable fa fa-check-circle" aria-hidden="true"></i>
-                <i *ngIf="!car.avaliable" class="icon-avaliable fa fa-window-close" aria-hidden="true"></i>
+                <i *ngIf="car.available" class="icon-available fa fa-check-circle" aria-hidden="true"></i>
+                <i *ngIf="!car.available" class="icon-available fa fa-window-close" aria-hidden="true"></i>
             </td>
             <td class="text-center">{{ car.licensePlate | uppercase }}</td>
             <td class="text-center">{{ car.color }}</td>
