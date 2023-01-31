@@ -21,14 +21,14 @@
     </thead>
     <tbody>
         <tr *ngFor="let car of cars">
-            <td>{{ car.name }}</td>
+            <td>{{ car.name | titlecase }}</td>
             <td>{{ car.description }}</td>
-            <td class="text-center">{{ car.dailyRate }}</td>
+            <td class="text-center">R$ {{ car.dailyRate }}</td>
             <td class="text-center">
                 <i *ngIf="car.avaliable" class="icon-avaliable fa fa-check-circle" aria-hidden="true"></i>
                 <i *ngIf="!car.avaliable" class="icon-avaliable fa fa-window-close" aria-hidden="true"></i>
             </td>
-            <td class="text-center">{{ car.licensePlate }}</td>
+            <td class="text-center">{{ car.licensePlate | uppercase }}</td>
             <td class="text-center">{{ car.color }}</td>
             <td class="text-center td-width">
                 <a href="#" title="Editar" alt="Editar" class="btn btn-xs btn-info"

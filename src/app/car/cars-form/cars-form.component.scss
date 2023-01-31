@@ -1,0 +1,24 @@
+$error-color: #dc3545;
+
+.buttons-form {
+    margin: 10px 10px 0 0;
+}
+
+.input-holder {
+    margin: 10px 0;
+}
+
+.error-message {
+    color: $error-color;
+    padding: 2px;
+    font-weight: bold;
+}
+
+input.ng-invalid.ng-touched {
+    border-color: $error-color;
+}
+
+.input-label {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
