@@ -22,3 +22,16 @@ input.ng-invalid.ng-touched {
     font-weight: 600;
     margin-bottom: 5px;
 }
+
+.radio-holder {
+    height: 38px;
+    .radio-option {
+        display: inline-flex;
+        align-items: center;
+        height: 100%;
+        margin-right: 10px;
+        .radio-input {
+            margin-right: 5px;
+        }
+    }
+}

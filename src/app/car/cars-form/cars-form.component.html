@@ -7,8 +7,7 @@
                 <label class="input-label" for="name">Nome:</label>
                 <input type="text" class="form-control" id="name" name="name" 
                 [(ngModel)]="car.name"
-                #name="ngModel"
-                minlength="2" required>
+                #name="ngModel" required>
                 <div *ngIf="name.errors && (name.dirty || name.touched)" class="error-message alert-danger">
                     <div [hidden]="!name.errors['required']" >Digite o nome do veículo.</div>
                     <div [hidden]="!name.errors['minlength']">O nome deve conter ao menos 2 caracteres.</div>
@@ -27,21 +26,21 @@
                 <label class="input-label" for="avaliable">Cor:</label>
                 <input type="text" class="form-control" id="color" name="color"
                 [(ngModel)]="car.color"
-                #color="ngModel"
-                minlength="2" required>
+                #color="ngModel" required>
                 <div *ngIf="color.errors && (color.dirty || color.touched)" class="error-message alert-danger">
                     <div [hidden]="!color.errors['required']">Digite a cor do veículo.</div>
                 </div>
             </div>
         </div>
-
-        <div class="form-group input-holder">
-            <label class="input-label" for="description">Descrição:</label>
-            <input type="text" class="form-control" id="description" name="description"
-            [(ngModel)]="car.description"
-            #description="ngModel" required>
-            <div *ngIf="description.errors && (description.dirty || description.touched)" class="error-message alert-danger">
-                <div [hidden]="!description.errors['required']">Digite a descrição do veículo.</div>
+        <div class="row">
+            <div class="form-group input-holder">
+                <label class="input-label" for="description">Descrição:</label>
+                <input type="text" class="form-control" id="description" name="description"
+                [(ngModel)]="car.description"
+                #description="ngModel" required>
+                <div *ngIf="description.errors && (description.dirty || description.touched)" class="error-message alert-danger">
+                    <div [hidden]="!description.errors['required']">Digite a descrição do veículo.</div>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -50,28 +49,34 @@
                 <input type="text" class="form-control" id="dailyRate" name="dailyRate"
                 [(ngModel)]="car.dailyRate"
                 #dailyRate="ngModel"
-                minlength="2" mask="0*.00" required>
+                mask="0*.00" required>
                 <div *ngIf="dailyRate.errors && (dailyRate.dirty || dailyRate.touched)" class="error-message alert-danger">
                     <div [hidden]="!dailyRate.errors['required']">Digite o valor diário de aluguel do carro.</div>
                 </div>
             </div>
-            <div class="form-group input-holder col">
+            <div class="form-group input-holder col-3">
                 <label class="input-label" for="avaliable">Disponível:</label>
-                <input type="text" class="form-control" id="avaliable" name="avaliable"
-                [(ngModel)]="car.avaliable"
-                #avaliable="ngModel"
-                minlength="2" required>
-                <div *ngIf="avaliable.errors && (avaliable.dirty || avaliable.touched)" class="error-message alert-danger">
-                    <div [hidden]="!avaliable.errors['required']">Digite a disponibilidade do veículo.</div>
+                <div class="radio-holder">
+                    <div class="radio-option">
+                        <input type="radio" class="radio-input form-check-input" id="avaliable" name="avaliable"
+                        [(ngModel)]="car.avaliable" [value]="true" required #avaliable="ngModel">
+                        <span>Sim</span>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" class="radio-input form-check-input" id="avaliable" name="avaliable"
+                        [(ngModel)]="car.avaliable" [value]="false" required><span>Não</span>
+                    </div>
+                </div>
+                <div class="error-message alert-danger" *ngIf="avaliable.errors?.['required'] && (avaliable.dirty || avaliable.touched)">
+                    Selecione uma opção.
                 </div>
             </div>
             <div class="form-group input-holder col">
                 <label class="input-label" for="licensePlate">Placa:</label>
                 <input type="text" class="form-control" id="licensePlate" name="licensePlate"
                 [(ngModel)]="car.licensePlate"
-                #licensePlate="ngModel"
-                minlength="2" required>
-                <div *ngIf="licensePlate.errors && (licensePlate.dirty || licensePlate.touched)" class="error-message alert-danger">
+                #licensePlate="ngModel" required>
+                <div *ngIf="licensePlate.errors && (licensePlate.dirty)" class="error-message alert-danger">
                     <div [hidden]="!licensePlate.errors['required']">Digite a placa do veículo.</div>
                 </div>
             </div>
