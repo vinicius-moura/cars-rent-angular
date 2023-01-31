@@ -4,20 +4,22 @@ import { CarService } from './service/car.service';
 import { CarsListComponent } from './cars-list/cars-list.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { CarsFormComponent } from './cars-form/cars-form.component';
 
 
 
 @NgModule({
   declarations: [
-    CarsListComponent
+    CarsListComponent,
+    CarsFormComponent
   ],
   imports: [
-    CommonModule
-  ],
-  providers: [
-    CarService,
+    CommonModule,
     RouterModule,
     FormsModule
+  ],
+  providers: [
+    CarService
   ]
 })
 export class CarModule { }

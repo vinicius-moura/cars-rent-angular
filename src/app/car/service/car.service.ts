@@ -19,6 +19,7 @@ export class CarService {
   insertCar(car: Car): void {
     const cars = this.listAll();
     car.id = new Date().getTime();
+    car.createdAt = new Date();
     cars.push(car);
     localStorage[LS_KEY] = JSON.stringify(cars);
   }
