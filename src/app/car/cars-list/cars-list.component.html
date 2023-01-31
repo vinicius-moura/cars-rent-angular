@@ -1,0 +1,45 @@
+<h1 class="text-center">Carros</h1>
+
+<table class="table table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th class="text-center">Valor/Dia</th>
+            <th class="text-center">Disponível</th>
+            <th class="text-center">Placa</th>
+            <th class="text-center">Cor</th>
+            <th class="text-center">
+                <a href="#" title="Novo" alt="Novo" 
+                class="btn btn-xs btn-success">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                    Novo
+                </a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let car of cars">
+            <td>{{ car.name }}</td>
+            <td>{{ car.description }}</td>
+            <td class="text-center">{{ car.dailyRate }}</td>
+            <td class="text-center">
+                <i *ngIf="car.avaliable" class="icon-avaliable fa fa-check-circle" aria-hidden="true"></i>
+                <i *ngIf="!car.avaliable" class="icon-avaliable fa fa-window-close" aria-hidden="true"></i>
+            </td>
+            <td class="text-center">{{ car.licensePlate }}</td>
+            <td class="text-center">{{ car.color }}</td>
+            <td class="text-center td-width">
+                <a href="#" title="Editar" alt="Editar" class="btn btn-xs btn-info">
+                    <i class="fa fa-edit" aria-hidden="true"></i>
+                    Editar
+                </a>
+                <a href="#" title="Remover" alt="Remover" class="btn btn-xs btn-danger">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                    Remover
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p *ngIf="cars.length===0" class="text-center no-cars-text">Nenhum carro cadastrado.</p>
