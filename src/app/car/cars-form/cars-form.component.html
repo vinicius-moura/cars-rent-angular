@@ -76,7 +76,7 @@
                 <input type="text" class="form-control" id="licensePlate" name="licensePlate"
                 [(ngModel)]="car.licensePlate"
                 #licensePlate="ngModel" required>
-                <div *ngIf="licensePlate.errors && (licensePlate.dirty)" class="error-message alert-danger">
+                <div *ngIf="licensePlate.errors && (description.dirty || description.touched)" class="error-message alert-danger">
                     <div [hidden]="!licensePlate.errors['required']">Digite a placa do veículo.</div>
                 </div>
             </div>
