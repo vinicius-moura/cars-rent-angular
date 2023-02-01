@@ -4,6 +4,7 @@
     <thead class="table-dark">
         <tr>
             <th>Nome</th>
+            <th>Montadora</th>
             <th>Descrição</th>
             <th class="text-center">Valor/Dia</th>
             <th class="text-center">Disponível</th>
@@ -22,6 +23,7 @@
     <tbody>
         <tr *ngFor="let car of cars">
             <td>{{ car.name | titlecase }}</td>
+            <td>{{ car.brand }}</td>
             <td>{{ car.description }}</td>
             <td class="text-center">R$ {{ car.dailyRate }}</td>
             <td class="text-center">

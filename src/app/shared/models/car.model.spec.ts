@@ -6,7 +6,7 @@ describe('Car', () => {
   var date = new Date("2022-01-01");
 
   beforeEach(() => {
-    car = new Car(1,'name','description',500.52,true,'FRC-3548','red',date);
+    car = new Car(1,'name','description',500.52,true,'FRC-3548','BMW','red',date);
   });
 
   it('should create an instance', () => {
@@ -20,6 +20,7 @@ describe('Car', () => {
     expect(car.dailyRate).toEqual(500.52);
     expect(car.available).toEqual(true);
     expect(car.licensePlate).toEqual('FRC-3548');
+    expect(car.brand).toEqual('BMW');
     expect(car.color).toEqual('red');
     expect(car.createdAt).toEqual(date);
   });

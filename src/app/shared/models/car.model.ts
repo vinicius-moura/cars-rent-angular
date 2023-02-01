@@ -6,8 +6,7 @@ export class Car {
         public dailyRate?: number,
         public available?: boolean,
         public licensePlate?: string,
-        // public brandId?: number,
-        // public categoryId?: number,
+        public brand?: string,
         public color?: string,
         public createdAt?: Date
     ){}

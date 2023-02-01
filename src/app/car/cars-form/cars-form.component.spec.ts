@@ -12,7 +12,7 @@ describe('CarsFormComponent', () => {
   let fixture: ComponentFixture<CarsFormComponent>;
   let carService: CarService;
   let activatedRoute: ActivatedRoute;
-  const car = new Car(1,'name','description',500.52,true,'FRC-3548','red', new Date());
+  const car = new Car(1,'name','description',500.52,true,'FRC-3548','BMW', 'red', new Date());
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({

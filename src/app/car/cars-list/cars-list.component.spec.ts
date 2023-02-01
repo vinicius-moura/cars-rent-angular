@@ -10,7 +10,7 @@ describe('CarsListComponent', () => {
   let component: CarsListComponent;
   let fixture: ComponentFixture<CarsListComponent>;
   let carService: CarService;
-  const car = new Car(1,'name','description',500.52,true,'FRC-3548','red', new Date());
+  const car = new Car(1,'name','description',500.52,true,'FRC-3548','BMW','red', new Date());
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({

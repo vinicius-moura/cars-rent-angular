@@ -33,7 +33,7 @@ describe('CarService', () => {
 
   it('should insert a new car on list', () => {
     const date = new Date();
-    const car = new Car(1,'name','description',500.52,true,'FRC-3548','red', date);
+    const car = new Car(1,'name','description',500.52,true,'FRC-3548','BMW','red', date);
 
     var result = service.insertCar(car);
 
@@ -48,7 +48,7 @@ describe('CarService', () => {
 
   it('should find a car by ID', () => {
     const date = new Date();
-    const car = new Car(1,'name','description',500.52,true,'FRC-3548','red', date);
+    const car = new Car(1,'name','description',500.52,true,'FRC-3548','red', 'BMW', date);
     
     service.insertCar(car);
     var carsObject = JSON.parse(window.localStorage['cars']);
@@ -59,11 +59,11 @@ describe('CarService', () => {
 
   it('should update a car', () => {
     const date = new Date();
-    const car = new Car(1,'name','description',500.52,true,'FRC-3548','red', date);
+    const car = new Car(1,'name','description',500.52,true,'FRC-3548','red', 'BMW', date);
     
     service.insertCar(car);
     var carsObject = JSON.parse(window.localStorage['cars']);
-    const carUpdate = new Car(carsObject[0].id,'updated','description',0,false,'FRC-XXXX','blue', date);
+    const carUpdate = new Car(carsObject[0].id,'updated','description',0,false,'FRC-XXXX','BMW','blue', date);
     var result = service.update(carUpdate);
 
     var objectUpdated = JSON.parse(window.localStorage['cars'])
@@ -72,7 +72,7 @@ describe('CarService', () => {
 
   it('should delete a car', () => {
     const date = new Date();
-    const car = new Car(1,'name','description',500.52,true,'FRC-3548','red', date);
+    const car = new Car(1,'name','description',500.52,true,'FRC-3548','BMW','red', date);
 
     service.insertCar(car);
     var carsObject = JSON.parse(window.localStorage['cars']);
